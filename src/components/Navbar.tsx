@@ -52,7 +52,7 @@ export function Navbar() {
           className="text-sm tracking-[0.3em] uppercase font-light text-text-primary"
           data-cursor="expand"
         >
-          RV
+          <img src="/tucano.png" alt="Logo" className="h-8 w-auto" />
         </a>
 
         {/* Desktop links */}
@@ -77,8 +77,8 @@ export function Navbar() {
           aria-label="Menu"
           data-cursor="expand"
         >
-          <span className={`block h-px bg-white transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-[3.5px]' : ''}`} />
-          <span className={`block h-px bg-white transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-[3.5px]' : ''}`} />
+          <span className={`block h-px bg-text-primary transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-[3.5px]' : ''}`} />
+          <span className={`block h-px bg-text-primary transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-[3.5px]' : ''}`} />
         </button>
       </nav>
 

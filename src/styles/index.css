@@ -1,26 +1,30 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'EpicPro';
+  src: url('/GC-EPICPRO-Demo-BF6891cc5419ab8.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 @theme {
-  --color-bg: #090b10;
-  --color-surface: #11141b;
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #b3b6bf;
-  --color-text-tertiary: #7f8593;
-  --color-border: #232834;
+  --color-bg: #FFFFFF;
+  --color-surface: #F7F9FC;
+  --color-brand: #1a4eb8;
+  --color-text-primary: #1a4eb8;
+  --color-text-secondary: #171717;
+  --color-text-tertiary: #8FAFD9;
+  --color-border: #E2EAF4;
 }
 
 @layer base {
   :root {
-    color-scheme: dark;
+    color-scheme: light;
   }
 
   body {
-    background-color: var(--color-bg);
-    background-image:
-      radial-gradient(circle at 12% 10%, rgba(94, 130, 255, 0.13), transparent 38%),
-      radial-gradient(circle at 88% 82%, rgba(76, 191, 186, 0.1), transparent 34%),
-      linear-gradient(180deg, #090b10 0%, #0b0e14 46%, #090b10 100%);
-    color: var(--color-text-primary);
+    background-color: #ffffff;
+    color: var(--color-text-secondary);
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     overflow-x: hidden;
@@ -35,7 +39,7 @@
   main > section {
     position: relative;
     border-top: 1px solid color-mix(in oklab, var(--color-border) 65%, transparent);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.012) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(180deg, rgba(27, 58, 122, 0.008) 0%, rgba(27, 58, 122, 0) 100%);
   }
 
   main > section:first-child {
@@ -46,10 +50,7 @@
   footer {
     position: relative;
     z-index: 1;
-    background:
-      linear-gradient(180deg, rgba(255, 255, 255, 0.015), rgba(255, 255, 255, 0.005)),
-      rgba(9, 11, 16, 0.74);
-    backdrop-filter: blur(8px);
+    background: #ffffff;
   }
 
   * {
@@ -63,14 +64,28 @@
   }
 
   ::selection {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(27, 58, 122, 0.15);
     color: var(--color-text-primary);
   }
 }
 
 @layer components {
   .font-hero-display {
-    font-family: 'Anton', 'Inter', sans-serif;
+    font-family: 'EpicPro', 'Inter', sans-serif;
     font-weight: 400;
   }
+
+  h2, h4, h5, h6 {
+    font-family: 'EpicPro', 'Inter', sans-serif;
+    color: #171717 !important;
+    text-shadow:
+      0 0 40px rgba(17, 17, 17, 0.12),
+      0 0 80px rgba(17, 17, 17, 0.08),
+      0 0 160px rgba(17, 17, 17, 0.05);
+  }
+
+  h3 {
+    font-family: 'EpicPro', 'Inter', sans-serif;
+  }
+
 }

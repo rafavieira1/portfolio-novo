@@ -1,17 +1,20 @@
 export interface Project {
   id: string
   name: string
+  category: { business: string; solution: string }
   tags: string[]
   images: string[]
   link: string
-  description: string
+  deliverable: string
+  context: string
 }
 
 export const projects: Project[] = [
   {
     id: 'voga',
     name: 'VOGA',
-    tags: ['Next.js', 'Tailwind', 'Full-stack'],
+    category: { business: 'Salão de beleza', solution: 'Site + agendamento' },
+    tags: ['SALÃO DE BELEZA · SITE + AGENDAMENTO'],
     images: [
       '/images/projects/vogahero.png',
       '/images/projects/voga (2).png',
@@ -24,13 +27,17 @@ export const projects: Project[] = [
       '/images/projects/voga (9).png',
       '/images/projects/voga (10).png',
     ],
-    link: '#',
-    description: 'Plataforma e-commerce de moda com catálogo dinâmico, carrinho persistente, checkout integrado e painel de administração para gestão de produtos e pedidos.',
+    link: 'https://vogaestetica.netlify.app',
+    deliverable:
+      'Site com agendamento online integrado, vitrine de serviços e profissionais, além de painel administrativo para organizar a agenda em tempo real.',
+    context:
+      'O salão perdia horas por dia respondendo pedidos de horário no WhatsApp e precisava de uma presença digital à altura do posicionamento premium da marca.',
   },
   {
     id: 'gmvision',
     name: 'GM Vision',
-    tags: ['React', 'Node.js', 'PostgreSQL'],
+    category: { business: 'Painéis de LED', solution: 'Site institucional' },
+    tags: ['PAINÉIS DE LED · SITE INSTITUCIONAL'],
     images: [
       '/images/projects/gmvisionhero.png',
       '/images/projects/gmvision (4).png',
@@ -45,13 +52,17 @@ export const projects: Project[] = [
       '/images/projects/gmvision (13).png',
       '/images/projects/gmvision (1).png'
     ],
-    link: '#',
-    description: 'Sistema completo de gestão para clínicas de estética: agendamento online, controle de clientes, histórico de procedimentos e painel administrativo com relatórios.',
+    link: 'https://gmvisionco.com',
+    deliverable:
+      'Site institucional com catálogo de painéis, cases de aplicação, formulário de orçamento e páginas preparadas para SEO técnico do setor.',
+    context:
+      'O mercado é B2B e competitivo: o cliente precisava de autoridade visual e clareza de informação para gerar leads qualificados vindos de busca orgânica.',
   },
   {
     id: 'chacarald',
     name: 'ChacaraLD',
-    tags: ['React', 'TypeScript', 'API REST'],
+    category: { business: 'Espaço de eventos', solution: 'Site com reservas' },
+    tags: ['ESPAÇO DE EVENTOS · SITE COM RESERVAS'],
     images: [
       '/images/projects/chacaraldhero.png',
       '/images/projects/chacarald (3).png',
@@ -66,13 +77,17 @@ export const projects: Project[] = [
       '/images/projects/chacarald (12).png',
       '/images/projects/chacarald (1).png'
     ],
-    link: '#',
-    description: 'Site institucional para espaço de eventos rurais: galeria de fotos, seção de pacotes, formulário de orçamento e design que transmite a essência do local.',
+    link: 'https://chacara-ld.netlify.app',
+    deliverable:
+      'Site com galeria imersiva do espaço, apresentação de pacotes, seção de disponibilidade e formulário de reserva direto com o proprietário.',
+    context:
+      'O cliente recebia muitas dúvidas repetidas sobre datas e valores; o site passou a pré-qualificar o contato, entregando leads prontos para fechar.',
   },
   {
     id: 'beaute',
     name: 'BEAUTE',
-    tags: ['React', 'Design', 'Tailwind'],
+    category: { business: 'Salão de beleza', solution: 'Site com agendamento' },
+    tags: ['SALÃO DE BELEZA · SITE COM AGENDAMENTO'],
     images: [
       '/images/projects/beautehero.png',
       '/images/projects/beaute (3).png',
@@ -83,7 +98,10 @@ export const projects: Project[] = [
       '/images/projects/beaute (8).png',
       '/images/projects/beaute (2).png'
     ],
-    link: '#',
-    description: 'Landing page de alta conversão com animações fluidas, seções de features, depoimentos e integração com formulário. Foco em performance e design responsivo para maximizar leads.',
+    link: 'https://beautebytati.netlify.app',
+    deliverable:
+      'Landing page com seções de serviços, equipe e depoimentos, conectada a um fluxo de agendamento com confirmação automática.',
+    context:
+      'A marca queria um canal próprio de captação que não dependesse de redes sociais e fortalecesse o reconhecimento local como referência no segmento.',
   },
 ]

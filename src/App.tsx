@@ -41,9 +41,11 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <About />
-        <Projects />
-        <Contact />
+                <div style={{ background: 'radial-gradient(ellipse 120% 80% at 100% 100%, #1a4eb8 0%, #6b8fd4 30%, #dce6f7 60%, #ffffff 100%)' }}>
+          <About />
+          <Projects />
+          <Contact />
+        </div>
       </main>
       <Footer />
     </>

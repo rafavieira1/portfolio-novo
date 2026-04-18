@@ -38,12 +38,13 @@ export function Hero() {
   const [imageFailed, setImageFailed] = useState(false)
 
   return (
-    <section className="px-2 pb-8 pt-16 md:px-3 md:pt-20 lg:px-4">
+    <section className="px-2 pb-24 pt-16 md:px-3 md:pb-32 md:pt-20 lg:px-4 lg:pb-40">
       <div
-        className="relative mx-auto min-h-[calc(100vh-0.5rem)] max-w-[1800px] overflow-hidden rounded-[3rem] border border-border bg-[linear-gradient(160deg,#11141b_0%,#0d1016_55%,#0a0c12_100%)] text-text-primary shadow-[0_30px_120px_rgba(0,0,0,0.45)]"
+        className="relative mx-auto min-h-[calc(100vh-0.5rem)] max-w-[1800px] overflow-hidden rounded-[3rem] border border-border text-text-primary shadow-[0_30px_120px_rgba(27,58,122,0.12)]"
+        style={{ backgroundImage: "url('/gra.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_12%,rgba(255,255,255,0.08),transparent_28%),radial-gradient(circle_at_78%_20%,rgba(255,255,255,0.06),transparent_30%)]" />
-        <div className="absolute inset-0 bg-[repeating-linear-gradient(122deg,rgba(255,255,255,0.02)_0px,rgba(255,255,255,0.02)_1px,transparent_1px,transparent_95px)] opacity-60" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_12%,rgba(27,58,122,0.07),transparent_28%),radial-gradient(circle_at_78%_20%,rgba(41,82,163,0.05),transparent_30%)]" />
+        <div className="absolute inset-0 bg-[repeating-linear-gradient(122deg,rgba(27,58,122,0.018)_0px,rgba(27,58,122,0.018)_1px,transparent_1px,transparent_95px)] opacity-60" />
 
         {/* Imagem centralizada absolutamente no retângulo */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 flex justify-center">
@@ -51,7 +52,7 @@ export function Hero() {
             <img
               src={personPng}
               alt="Retrato de Rafael Vieira"
-              className="h-[92vh] w-auto max-w-[750px] object-contain object-bottom drop-shadow-[0_30px_45px_rgba(0,0,0,0.45)]"
+              className="h-[105vh] w-auto max-w-[1100px] object-contain object-bottom drop-shadow-[0_30px_45px_rgba(27,58,122,0.18)]"
               loading="eager"
               decoding="async"
               onError={() => setImageFailed(true)}
@@ -60,7 +61,7 @@ export function Hero() {
             <img
               src={localFallbackPerson}
               alt="Retrato de pessoa"
-              className="h-[78vh] w-auto max-w-[500px] object-contain object-bottom drop-shadow-[0_30px_45px_rgba(0,0,0,0.45)]"
+              className="h-[78vh] w-auto max-w-[500px] object-contain object-bottom drop-shadow-[0_30px_45px_rgba(27,58,122,0.18)]"
               loading="eager"
               decoding="async"
             />
@@ -69,21 +70,41 @@ export function Hero() {
 
         <div className="relative z-10 flex min-h-[calc(100vh-0.5rem)] flex-col px-5 pt-5 pb-20 md:px-8 md:pt-6 md:pb-24 lg:px-12 lg:pt-7 lg:pb-28">
           <header className="relative z-10 pt-1 md:pt-2">
-            <h1 className="font-hero-display text-center text-[clamp(2.8rem,13vw,13rem)] uppercase tracking-[0.02em] text-text-primary">
+            <h1
+              className="font-hero-display text-center text-[clamp(2.8rem,13vw,11rem)] uppercase tracking-[0.02em] text-neutral-900 whitespace-nowrap"
+              style={{
+                textShadow:
+                  '0 0 40px rgba(17,17,17,0.12), 0 0 80px rgba(17,17,17,0.08), 0 0 160px rgba(17,17,17,0.05)',
+                transform: 'scaleY(1.38)',
+                transformOrigin: 'top',
+              }}
+            >
               Rafael Vieira
             </h1>
           </header>
 
           <div className="mt-0 flex flex-1 items-end pb-2">
             <div className="relative z-30 flex flex-col justify-center">
-              <h2 className="max-w-[24ch] text-[clamp(1.8rem,2.8vw,2.7rem)] font-light leading-[1.06] text-text-primary">
-                Desenvolvo produtos web com design refinado e foco em resultado.
+              <h2 className="font-sans max-w-[24ch] text-[clamp(1.8rem,2.8vw,2.7rem)] font-light leading-[1.06] text-text-primary">
+                Sites e sistemas que transformam negócios locais em marcas digitais.
               </h2>
               <p className="mt-4 max-w-[44ch] text-base leading-relaxed text-text-secondary">
-                Trabalho de ponta a ponta: estrategia, interface, frontend e backend. Entrego experiencias rapidas, elegantes e prontas para conversao.
+                Atuo do planejamento à entrega: estratégia, design, frontend e backend. Produtos rápidos, elegantes e prontos para converter.
               </p>
 
-              <div className="mt-8 flex gap-3">
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <a
+                  href="https://wa.me/5519997026999?text=Ol%C3%A1%20Rafael%2C%20vim%20pelo%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 rounded-full bg-neutral-900 px-6 py-3 text-sm font-medium text-white shadow-[0_10px_30px_rgba(0,0,0,0.25)] transition-all hover:-translate-y-0.5 hover:bg-neutral-800 hover:shadow-[0_16px_40px_rgba(0,0,0,0.35)]"
+                  data-cursor="expand"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-current">
+                    <path d="M20.52 3.48A11.86 11.86 0 0 0 12.04 0C5.5 0 .2 5.3.2 11.84c0 2.09.55 4.13 1.6 5.93L0 24l6.38-1.67a11.82 11.82 0 0 0 5.66 1.44h.01c6.54 0 11.84-5.3 11.84-11.84 0-3.16-1.23-6.13-3.37-8.45zM12.05 21.3h-.01a9.46 9.46 0 0 1-4.82-1.32l-.35-.21-3.78.99 1.01-3.69-.23-.38a9.44 9.44 0 0 1-1.45-5.05c0-5.22 4.25-9.47 9.47-9.47 2.53 0 4.9.99 6.69 2.78a9.4 9.4 0 0 1 2.77 6.69c0 5.22-4.25 9.46-9.3 9.66zm5.2-7.1c-.29-.14-1.69-.83-1.95-.93-.26-.1-.45-.14-.64.14-.19.29-.73.93-.9 1.12-.17.19-.33.22-.62.07-.29-.14-1.21-.45-2.3-1.42-.85-.76-1.42-1.69-1.59-1.98-.17-.29-.02-.45.13-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.55-.47-.48-.64-.49l-.55-.01c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.39 0 1.41 1.03 2.78 1.17 2.97.14.19 2.03 3.1 4.92 4.35.69.3 1.22.48 1.64.61.69.22 1.32.19 1.81.12.55-.08 1.69-.69 1.93-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.33z"/>
+                  </svg>
+                  Fale comigo
+                </a>
                 {socialLinks.map((social) => (
                   <a
                     key={social.label}
@@ -91,7 +112,7 @@ export function Hero() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.label}
-                    className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-text-tertiary transition-colors hover:border-text-secondary hover:text-text-primary"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-text-secondary/20 text-text-secondary transition-colors hover:border-text-secondary hover:text-text-secondary"
                     data-cursor="expand"
                   >
                     {social.icon}
