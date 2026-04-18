@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #090b10;
+  --color-surface: #11141b;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #b3b6bf;
+  --color-text-tertiary: #7f8593;
+  --color-border: #232834;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    background-image:
+      radial-gradient(circle at 12% 10%, rgba(94, 130, 255, 0.13), transparent 38%),
+      radial-gradient(circle at 88% 82%, rgba(76, 191, 186, 0.1), transparent 34%),
+      linear-gradient(180deg, #090b10 0%, #0b0e14 46%, #090b10 100%);
+    color: var(--color-text-primary);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+  }
+
+  main > section {
+    position: relative;
+    border-top: 1px solid color-mix(in oklab, var(--color-border) 65%, transparent);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.012) 0%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  main > section:first-child {
+    border-top: none;
+    background: transparent;
+  }
+
+  footer {
+    position: relative;
+    z-index: 1;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.015), rgba(255, 255, 255, 0.005)),
+      rgba(9, 11, 16, 0.74);
+    backdrop-filter: blur(8px);
+  }
+
+  * {
+    cursor: none;
+  }
+
+  @media (pointer: coarse) {
+    * {
+      cursor: auto;
+    }
+  }
+
+  ::selection {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--color-text-primary);
+  }
+}
+
+@layer components {
+  .font-hero-display {
+    font-family: 'Anton', 'Inter', sans-serif;
+    font-weight: 400;
+  }
+}
