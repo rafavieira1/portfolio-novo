@@ -45,6 +45,28 @@ export function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_12%,rgba(255,255,255,0.08),transparent_28%),radial-gradient(circle_at_78%_20%,rgba(255,255,255,0.06),transparent_30%)]" />
         <div className="absolute inset-0 bg-[repeating-linear-gradient(122deg,rgba(255,255,255,0.02)_0px,rgba(255,255,255,0.02)_1px,transparent_1px,transparent_95px)] opacity-60" />
 
+        {/* Imagem centralizada absolutamente no retângulo */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 flex justify-center">
+          {!imageFailed ? (
+            <img
+              src={personPng}
+              alt="Retrato de Rafael Vieira"
+              className="h-[92vh] w-auto max-w-[750px] object-contain object-bottom drop-shadow-[0_30px_45px_rgba(0,0,0,0.45)]"
+              loading="eager"
+              decoding="async"
+              onError={() => setImageFailed(true)}
+            />
+          ) : (
+            <img
+              src={localFallbackPerson}
+              alt="Retrato de pessoa"
+              className="h-[78vh] w-auto max-w-[500px] object-contain object-bottom drop-shadow-[0_30px_45px_rgba(0,0,0,0.45)]"
+              loading="eager"
+              decoding="async"
+            />
+          )}
+        </div>
+
         <div className="relative z-10 flex min-h-[calc(100vh-0.5rem)] flex-col px-5 pt-5 pb-20 md:px-8 md:pt-6 md:pb-24 lg:px-12 lg:pt-7 lg:pb-28">
           <header className="relative z-10 pt-1 md:pt-2">
             <h1 className="font-hero-display text-center text-[clamp(2.8rem,13vw,13rem)] uppercase tracking-[0.02em] text-text-primary">
@@ -52,8 +74,8 @@ export function Hero() {
             </h1>
           </header>
 
-          <div className="mt-0 grid flex-1 grid-cols-1 gap-10 md:mt-0 lg:grid-cols-[1.15fr_0.95fr_0.75fr] lg:items-end lg:pb-2">
-            <div className="relative z-30 flex flex-col justify-center lg:mr-[-4rem] xl:mr-[-6rem]">
+          <div className="mt-0 flex flex-1 items-end pb-2">
+            <div className="relative z-30 flex flex-col justify-center">
               <h2 className="max-w-[24ch] text-[clamp(1.8rem,2.8vw,2.7rem)] font-light leading-[1.06] text-text-primary">
                 Desenvolvo produtos web com design refinado e foco em resultado.
               </h2>
@@ -77,29 +99,6 @@ export function Hero() {
                 ))}
               </div>
             </div>
-
-            <div className="relative z-20 -mt-[6.2rem] flex min-h-[340px] items-end justify-center md:-mt-[7.2rem] md:min-h-[460px] lg:-mt-[11.8rem]">
-              {!imageFailed ? (
-                <img
-                  src={personPng}
-                  alt="Retrato de Rafael Vieira"
-                  className="h-[92%] w-auto max-w-[660px] translate-y-[2.5rem] object-contain drop-shadow-[0_30px_45px_rgba(0,0,0,0.45)] md:h-[98%] md:translate-y-[3rem]"
-                  loading="eager"
-                  decoding="async"
-                  onError={() => setImageFailed(true)}
-                />
-              ) : (
-                <img
-                  src={localFallbackPerson}
-                  alt="Retrato de pessoa"
-                  className="h-[92%] w-auto max-w-[550px] translate-y-[2.5rem] object-contain drop-shadow-[0_30px_45px_rgba(0,0,0,0.45)] md:h-[98%] md:translate-y-[3rem]"
-                  loading="eager"
-                  decoding="async"
-                />
-              )}
-            </div>
-
-            <div className="hidden lg:block" />
           </div>
         </div>
       </div>
