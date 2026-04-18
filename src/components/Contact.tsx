@@ -50,7 +50,7 @@ export function Contact() {
             className="absolute inset-0 opacity-100 group-hover:opacity-0 transition-opacity duration-500 pointer-events-none"
             style={{ backgroundImage: "url('fundocta.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}
           />
-          <div className="relative flex flex-col items-center justify-between min-h-[420px] md:min-h-[500px] py-12 px-8">
+          <div className="relative flex flex-col items-center justify-between min-h-[500px] md:min-h-[600px] py-12 px-8">
             {/* Top: icon + label + whatsapp button */}
             <div className="flex flex-col items-center gap-5">
               <img

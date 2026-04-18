@@ -40,7 +40,7 @@ export function Hero() {
   return (
     <section className="px-2 pb-24 pt-16 md:px-3 md:pb-32 md:pt-20 lg:px-4 lg:pb-40">
       <div
-        className="relative mx-auto min-h-[calc(100vh-0.5rem)] max-w-[1800px] overflow-hidden rounded-[3rem] border border-border text-text-primary shadow-[0_30px_120px_rgba(27,58,122,0.12)]"
+        className="relative mx-auto min-h-[92vh] max-w-[1800px] overflow-hidden rounded-[3rem] border border-border text-text-primary shadow-[0_30px_120px_rgba(27,58,122,0.12)]"
         style={{ backgroundImage: "url('/gra.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_12%,rgba(27,58,122,0.07),transparent_28%),radial-gradient(circle_at_78%_20%,rgba(41,82,163,0.05),transparent_30%)]" />
@@ -52,7 +52,7 @@ export function Hero() {
             <img
               src={personPng}
               alt="Retrato de Rafael Vieira"
-              className="h-[105vh] w-auto max-w-[1100px] object-contain object-bottom drop-shadow-[0_30px_45px_rgba(27,58,122,0.18)]"
+              className="h-[105vh] w-auto max-w-[1050px] object-contain object-bottom drop-shadow-[0_30px_45px_rgba(27,58,122,0.18)]"
               loading="eager"
               decoding="async"
               onError={() => setImageFailed(true)}
@@ -68,8 +68,8 @@ export function Hero() {
           )}
         </div>
 
-        <div className="relative z-10 flex min-h-[calc(100vh-0.5rem)] flex-col px-5 pt-5 pb-20 md:px-8 md:pt-6 md:pb-24 lg:px-12 lg:pt-7 lg:pb-28">
-          <header className="relative z-10 pt-1 md:pt-2">
+        <div className="relative z-10 flex min-h-[92vh] flex-col px-5 pt-0 pb-20 md:px-8 md:pt-0 md:pb-24 lg:px-12 lg:pt-0 lg:pb-28">
+          <header className="relative z-10 pt-0">
             <h1
               className="font-hero-display text-center text-[clamp(2.8rem,13vw,11rem)] uppercase tracking-[0.02em] text-neutral-900 whitespace-nowrap"
               style={{
