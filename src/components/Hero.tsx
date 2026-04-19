@@ -1,6 +1,18 @@
 import { useState } from 'react'
+import { Marquee } from './ui/marquee'
 
 const personPng = '/eu.png'
+
+const marqueeItems = [
+  'Sites',
+  'Landing Pages',
+  'Sistemas',
+  'Design',
+  'Página de Links',
+  'Automações',
+  'Performance',
+  'SEO',
+]
 const localFallbackPerson = '/images/hero-person.svg'
 
 const socialLinks = [
@@ -45,6 +57,20 @@ export function Hero() {
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_12%,rgba(27,58,122,0.07),transparent_28%),radial-gradient(circle_at_78%_20%,rgba(41,82,163,0.05),transparent_30%)]" />
         <div className="absolute inset-0 bg-[repeating-linear-gradient(122deg,rgba(27,58,122,0.018)_0px,rgba(27,58,122,0.018)_1px,transparent_1px,transparent_95px)] opacity-60" />
+
+        {/* Marquee atrás da imagem, no rodapé do card */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-10 z-[5]">
+          <Marquee duration={40} fade={false} className="w-full">
+            {marqueeItems.map((item) => (
+              <span
+                key={item}
+                className="font-sans mx-8 whitespace-nowrap text-[clamp(1rem,2vw,1.5rem)] uppercase leading-none tracking-[0.18em] text-neutral-900/20"
+              >
+                {item} <span className="mx-2 text-text-primary/10">✦</span>
+              </span>
+            ))}
+          </Marquee>
+        </div>
 
         {/* Imagem centralizada absolutamente no retângulo */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 flex justify-center">

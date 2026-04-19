@@ -41,7 +41,7 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-                <div style={{ background: 'radial-gradient(ellipse 120% 80% at 100% 100%, #1a4eb8 0%, #6b8fd4 30%, #dce6f7 60%, #ffffff 100%)' }}>
+                <div style={{ backgroundImage: 'linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0.85) 6%, rgba(255,255,255,0.5) 14%, rgba(255,255,255,0.2) 22%, rgba(255,255,255,0) 32%), url(/nova.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
           <About />
           <Projects />
           <Contact />

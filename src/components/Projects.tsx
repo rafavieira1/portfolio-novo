@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
+import { MotionButton } from './ui/motion-button'
 import gsap from 'gsap'
 import { projects } from '../data/projects'
 import { Reveal } from './ui/Reveal'
@@ -181,12 +182,12 @@ function ProjectRow({
           onMouseLeave={onMouseLeave}
         >
           <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-8">
-            <h3 className="text-2xl md:text-4xl font-extralight tracking-tight text-text-primary/90 group-hover:text-text-primary transition-colors">
+            <h3 className="text-2xl md:text-4xl font-extralight tracking-tight text-neutral-900 transition-colors">
               {project.name}
             </h3>
             <div className="flex gap-3">
               {project.tags.map((tag) => (
-                <span key={tag} className="text-xs uppercase tracking-wider text-text-tertiary">
+                <span key={tag} className="text-xs uppercase tracking-wider text-neutral-900">
                   {tag}
                 </span>
               ))}
@@ -195,12 +196,12 @@ function ProjectRow({
 
           <div className="flex items-center gap-4 shrink-0 ml-4">
             {project.link === '#' && (
-              <span className="text-xs uppercase tracking-[0.18em] text-text-tertiary hidden md:block">
+              <span className="text-xs uppercase tracking-[0.18em] text-neutral-900 hidden md:block">
                 VER PROJETO
               </span>
             )}
             <span
-              className="text-text-tertiary group-hover:text-text-primary transition-all duration-300 text-lg"
+              className="text-neutral-900 transition-all duration-300 text-lg"
               style={{ transform: open ? 'rotate(45deg)' : 'rotate(0deg)', display: 'inline-block', transition: 'transform 0.3s ease' }}
             >
               +
@@ -222,7 +223,7 @@ function ProjectRow({
 
             {/* Description */}
             <div className="accordion-child flex flex-col gap-5 md:pt-1">
-              <h4 className="text-2xl md:text-3xl font-light tracking-tight text-text-primary">
+              <h4 className="text-2xl md:text-3xl font-light tracking-tight text-neutral-900">
                   {project.name}
                 </h4>
 
@@ -237,30 +238,29 @@ function ProjectRow({
 
               <div className="flex flex-wrap items-center gap-3 mt-2">
                 {project.link !== '#' && (
-                  <a
+                  <MotionButton
+                    label="Ver projeto"
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-2 rounded-full bg-neutral-900 px-6 py-3 text-sm font-medium text-white shadow-[0_10px_30px_rgba(27,58,122,0.25)] transition-all hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgba(27,58,122,0.35)]"
                     data-cursor="expand"
-                  >
-                    Ver projeto
-                  </a>
+                  />
                 )}
-                <a
+                <MotionButton
+                  label="Quero algo parecido"
                   href={`https://wa.me/5519997026999?text=${encodeURIComponent(
                     `Olá Rafael, vi o projeto ${project.name} no seu portfólio e quero algo parecido.`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 rounded-full bg-neutral-900 px-6 py-3 text-sm font-medium text-white shadow-[0_10px_30px_rgba(27,58,122,0.25)] transition-all hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgba(27,58,122,0.35)]"
                   data-cursor="expand"
-                >
-                  <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-current">
-                    <path d="M20.52 3.48A11.86 11.86 0 0 0 12.04 0C5.5 0 .2 5.3.2 11.84c0 2.09.55 4.13 1.6 5.93L0 24l6.38-1.67a11.82 11.82 0 0 0 5.66 1.44h.01c6.54 0 11.84-5.3 11.84-11.84 0-3.16-1.23-6.13-3.37-8.45zM12.05 21.3h-.01a9.46 9.46 0 0 1-4.82-1.32l-.35-.21-3.78.99 1.01-3.69-.23-.38a9.44 9.44 0 0 1-1.45-5.05c0-5.22 4.25-9.47 9.47-9.47 2.53 0 4.9.99 6.69 2.78a9.4 9.4 0 0 1 2.77 6.69c0 5.22-4.25 9.46-9.3 9.66zm5.2-7.1c-.29-.14-1.69-.83-1.95-.93-.26-.1-.45-.14-.64.14-.19.29-.73.93-.9 1.12-.17.19-.33.22-.62.07-.29-.14-1.21-.45-2.3-1.42-.85-.76-1.42-1.69-1.59-1.98-.17-.29-.02-.45.13-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.55-.47-.48-.64-.49l-.55-.01c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.39 0 1.41 1.03 2.78 1.17 2.97.14.19 2.03 3.1 4.92 4.35.69.3 1.22.48 1.64.61.69.22 1.32.19 1.81.12.55-.08 1.69-.69 1.93-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.33z"/>
-                  </svg>
-                  Quero algo parecido
-                </a>
+                  classes="w-60"
+                  icon={
+                    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-white">
+                      <path d="M20.52 3.48A11.86 11.86 0 0 0 12.04 0C5.5 0 .2 5.3.2 11.84c0 2.09.55 4.13 1.6 5.93L0 24l6.38-1.67a11.82 11.82 0 0 0 5.66 1.44h.01c6.54 0 11.84-5.3 11.84-11.84 0-3.16-1.23-6.13-3.37-8.45zM12.05 21.3h-.01a9.46 9.46 0 0 1-4.82-1.32l-.35-.21-3.78.99 1.01-3.69-.23-.38a9.44 9.44 0 0 1-1.45-5.05c0-5.22 4.25-9.47 9.47-9.47 2.53 0 4.9.99 6.69 2.78a9.4 9.4 0 0 1 2.77 6.69c0 5.22-4.25 9.46-9.3 9.66zm5.2-7.1c-.29-.14-1.69-.83-1.95-.93-.26-.1-.45-.14-.64.14-.19.29-.73.93-.9 1.12-.17.19-.33.22-.62.07-.29-.14-1.21-.45-2.3-1.42-.85-.76-1.42-1.69-1.59-1.98-.17-.29-.02-.45.13-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.55-.47-.48-.64-.49l-.55-.01c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.39 0 1.41 1.03 2.78 1.17 2.97.14.19 2.03 3.1 4.92 4.35.69.3 1.22.48 1.64.61.69.22 1.32.19 1.81.12.55-.08 1.69-.69 1.93-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.33z"/>
+                    </svg>
+                  }
+                />
               </div>
             </div>
           </div>
@@ -279,9 +279,9 @@ export function Projects() {
     <section id="projetos" className="py-24 md:py-32 lg:py-40 px-6 md:px-12 lg:px-[8%]">
       <Reveal>
         <div className="flex items-baseline gap-4 mb-16 md:mb-20 lg:mb-24">
-          <span className="text-xs tracking-[0.3em] uppercase text-text-tertiary select-none">03</span>
+          <span className="text-xs tracking-[0.3em] uppercase text-neutral-900 select-none">03</span>
           <div className="h-px flex-1 max-w-[3rem] bg-border" />
-          <h2 className="text-[clamp(2.2rem,5.2vw,4.8rem)] font-light tracking-tight text-text-primary">
+          <h2 className="text-[clamp(2.2rem,5.2vw,4.8rem)] font-light tracking-tight text-neutral-900">
             Projetos
           </h2>
         </div>

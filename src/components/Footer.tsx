@@ -1,4 +1,5 @@
 import { MagneticButton } from './ui/MagneticButton'
+import { MotionButton } from './ui/motion-button'
 import { getLenis } from '../hooks/useLenis'
 
 const navLinks = [
@@ -88,18 +89,12 @@ export function Footer() {
         {/* Middle: CTA button */}
         <div className="flex items-center justify-center py-4 md:py-8">
           <MagneticButton>
-            <a
+            <MotionButton
+              label="Fale comigo"
               href="#contato"
               onClick={(e) => { e.preventDefault(); scrollTo('#contato') }}
-              className="inline-flex items-center gap-3 rounded-full px-5 py-3 text-sm font-semibold text-neutral-900 transition-colors"
-              style={{ backgroundImage: 'url(/azulebranco.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}
               data-cursor="expand"
-            ><span className="rounded-full bg-white/15 px-2 py-0.5 text-[10px] tracking-[0.15em] uppercase">
-              </span>
-              Fale comigo
-              <span className="rounded-full bg-white/15 px-2 py-0.5 text-[10px] tracking-[0.15em] uppercase">
-              </span>
-            </a>
+            />
           </MagneticButton>
         </div>
 
