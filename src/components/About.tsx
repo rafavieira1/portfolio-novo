@@ -31,18 +31,18 @@ export function About() {
 
   return (
     <section id="sobre" className="py-24 md:py-32 lg:py-40">
-      <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch">
+      <div className="grid grid-cols-1 lg:grid-cols-[50%_1fr] items-stretch gap-x-4 md:gap-x-8 lg:gap-x-12">
 
         {/* Left — full-bleed image */}
         <Reveal direction="left">
           <div
             ref={imgRef}
-            className="relative w-full h-[70vh] lg:h-[90vh] overflow-hidden bg-[#0e0e0e] rounded-r-3xl"
+            className="overflow-hidden bg-[#0e0e0e] rounded-3xl ml-4 md:ml-8 lg:ml-12 max-h-[700px]"
           >
             <img
               src="/4por3.png"
               alt="Retrato de Rafael Vieira"
-              className="absolute inset-0 h-full w-full object-cover object-center"
+              className="block w-full h-full object-cover object-center"
               loading="lazy"
               decoding="async"
             />
@@ -50,7 +50,7 @@ export function About() {
         </Reveal>
 
         {/* Right — title + two-column text */}
-        <div className="flex flex-col justify-start px-6 md:px-12 lg:px-16 pt-0 pb-16 lg:pb-0">
+        <div className="flex flex-col justify-start pr-6 md:pr-12 lg:pr-16 pt-0 pb-16 lg:pb-0">
           <Reveal>
             <div className="flex items-baseline gap-4 mb-16 md:mb-20 lg:mb-24">
               <span className="text-xs tracking-[0.3em] uppercase text-text-tertiary select-none">02</span>
