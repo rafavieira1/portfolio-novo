@@ -1,11 +1,11 @@
+import { getLenis } from '../hooks/useLenis'
 import { MagneticButton } from './ui/MagneticButton'
 import { MotionButton } from './ui/motion-button'
-import { getLenis } from '../hooks/useLenis'
 
 const navLinks = [
   { label: 'Sobre', href: '#sobre' },
   { label: 'Projetos', href: '#projetos' },
-  { label: 'Contato', href: '#contato' }
+  { label: 'Contato', href: '#contato' },
 ]
 
 const socialLinks = [
@@ -50,62 +50,75 @@ export function Footer() {
   }
 
   return (
-    <footer className="relative border-t border-border px-6 md:px-12 lg:px-[6%] pt-16 md:pt-20 overflow-hidden">
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-10 md:gap-8 items-start">
-        {/* Left: socials + email + address */}
-        <div className="flex flex-col gap-6">
+    <footer className="relative overflow-hidden border-t border-border px-5 pt-14 sm:px-6 sm:pt-16 md:px-8 md:pt-20 lg:px-[6%]">
+      <div className="relative z-10 mx-auto grid max-w-[1600px] grid-cols-1 gap-10 text-center md:grid-cols-[1fr_auto_1fr] md:items-start md:gap-8 md:text-left">
+        <div className="flex flex-col items-center gap-6 md:items-start">
           <div className="flex items-center gap-3">
-            {socialLinks.map((s) => (
+            {socialLinks.map((social) => (
               <a
-                key={s.label}
-                href={s.href}
+                key={social.label}
+                href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={s.label}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-text-secondary/30 text-text-secondary hover:border-text-secondary hover:text-text-primary transition-colors"
+                aria-label={social.label}
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-text-secondary/30 text-text-secondary transition-colors hover:border-text-secondary hover:text-text-primary"
                 data-cursor="expand"
               >
-                {s.icon}
+                {social.icon}
               </a>
             ))}
             <a
               href="mailto:rafavieira372@gmail.com"
               aria-label="Email"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-text-secondary/30 text-text-secondary hover:border-text-secondary hover:text-text-primary transition-colors"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-text-secondary/30 text-text-secondary transition-colors hover:border-text-secondary hover:text-text-primary"
               data-cursor="expand"
             >
-              <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <rect x="2" y="4" width="20" height="16" rx="2" />
                 <path d="M2 7l10 7 10-7" />
               </svg>
             </a>
           </div>
           <address className="not-italic text-sm leading-relaxed text-text-secondary/80">
-            Medianeira - PR · Atendimento remoto<br/>
+            Medianeira - PR · Atendimento remoto
+            <br />
             Disponível para projetos
           </address>
         </div>
 
-        {/* Middle: CTA button */}
-        <div className="flex items-center justify-center py-4 md:py-8">
+        <div className="flex items-center justify-center py-2 md:py-8">
           <MagneticButton>
             <MotionButton
               label="Fale comigo"
               href="#contato"
-              onClick={(e) => { e.preventDefault(); scrollTo('#contato') }}
+              onClick={(e) => {
+                e.preventDefault()
+                scrollTo('#contato')
+              }}
               data-cursor="expand"
             />
           </MagneticButton>
         </div>
 
-        {/* Right: nav links */}
-        <nav className="flex flex-col items-start md:items-end gap-2">
+        <nav className="flex flex-col items-center gap-2 md:items-end">
           {navLinks.map((link) => (
             <MagneticButton key={link.href}>
               <a
                 href={link.href}
-                onClick={(e) => { e.preventDefault(); scrollTo(link.href) }}
-                className="text-base md:text-lg text-text-secondary hover:text-text-primary transition-colors"
+                onClick={(e) => {
+                  e.preventDefault()
+                  scrollTo(link.href)
+                }}
+                className="text-base text-text-secondary transition-colors hover:text-text-primary md:text-lg"
               >
                 {link.label}
               </a>
@@ -114,14 +127,12 @@ export function Footer() {
         </nav>
       </div>
 
-      {/* Bottom row */}
-      <div className="relative z-10 mt-14 md:mt-20 flex items-center justify-center gap-3 text-xs text-text-secondary/80">
+      <div className="relative z-10 mt-12 flex items-center justify-center gap-3 text-center text-xs text-text-secondary/80 md:mt-20">
         <p>© {new Date().getFullYear()} Rafael Vieira</p>
       </div>
 
-      {/* Watermark */}
       <div aria-hidden="true" className="pointer-events-none mt-6 flex justify-center overflow-hidden">
-        <span className="font-hero-display select-none whitespace-nowrap text-[clamp(6rem,26vw,22rem)] lowercase leading-[0.85] text-text-secondary/[0.09] tracking-tight -mb-[0.25em]">
+        <span className="font-hero-display select-none whitespace-nowrap text-[clamp(5rem,28vw,22rem)] lowercase leading-[0.85] tracking-tight text-text-secondary/[0.09] -mb-[0.25em]">
           rafael
         </span>
       </div>

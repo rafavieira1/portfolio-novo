@@ -50,7 +50,7 @@ export const projects: Project[] = [
       '/images/projects/gmvision (11).png',
       '/images/projects/gmvision (12).png',
       '/images/projects/gmvision (13).png',
-      '/images/projects/gmvision (1).png'
+      '/images/projects/gmvision (1).png',
     ],
     link: 'https://gmvisionco.com',
     deliverable:
@@ -75,7 +75,7 @@ export const projects: Project[] = [
       '/images/projects/chacarald (10).png',
       '/images/projects/chacarald (11).png',
       '/images/projects/chacarald (12).png',
-      '/images/projects/chacarald (1).png'
+      '/images/projects/chacarald (1).png',
     ],
     link: 'https://chacara-ld.netlify.app',
     deliverable:
@@ -96,7 +96,7 @@ export const projects: Project[] = [
       '/images/projects/beaute (6).png',
       '/images/projects/beaute (7).png',
       '/images/projects/beaute (8).png',
-      '/images/projects/beaute (2).png'
+      '/images/projects/beaute (2).png',
     ],
     link: 'https://beautebytati.netlify.app',
     deliverable:

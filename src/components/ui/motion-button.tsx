@@ -19,16 +19,16 @@ export function MotionButton({ label, icon, classes, as, ...rest }: MotionButton
         className="block h-12 w-12 overflow-hidden rounded-full bg-neutral-900 duration-500 group-hover:w-full"
         aria-hidden="true"
       />
-      <div className="absolute top-1/2 left-4 translate-x-0 -translate-y-1/2 duration-500 group-hover:translate-x-[0.4rem]">
+      <div className="absolute left-4 top-1/2 -translate-y-1/2 translate-x-0 duration-500 group-hover:translate-x-[0.4rem]">
         {icon ?? <ArrowRight className="size-5 text-white" />}
       </div>
-      <span className="absolute top-1/2 left-1/2 ml-4 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-center text-sm font-medium tracking-tight text-neutral-900 duration-500 group-hover:text-white">
+      <span className="absolute left-1/2 top-1/2 ml-4 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-center text-sm font-medium tracking-tight text-neutral-900 duration-500 group-hover:text-white">
         {label}
       </span>
     </>
   )
 
-  const baseClass = `group relative inline-flex h-14 w-52 cursor-pointer items-center rounded-full bg-white border border-neutral-200 p-1 outline-none overflow-hidden ${classes ?? ''}`
+  const baseClass = `group relative inline-flex h-14 w-52 max-w-full cursor-pointer items-center overflow-hidden rounded-full border border-neutral-200 bg-white p-1 outline-none ${classes ?? ''}`
 
   if (as === 'button') {
     const { onClick, type, disabled, ...btnRest } = rest as ButtonHTMLAttributes<HTMLButtonElement>

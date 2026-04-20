@@ -1,19 +1,19 @@
-import { useRef, useEffect, useCallback } from 'react'
+import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 
-export function useGsap<T extends HTMLElement = HTMLDivElement>(
-  callback: (ctx: gsap.Context) => void,
-  deps: unknown[] = []
-) {
+export function useGsap<T extends HTMLElement = HTMLDivElement>(callback: (element: T) => void) {
   const ref = useRef<T>(null)
 
-  const stableCallback = useCallback(callback, deps)
-
   useEffect(() => {
-    if (!ref.current) return
-    const ctx = gsap.context(stableCallback, ref.current)
+    const element = ref.current
+    if (!element) return
+
+    const ctx = gsap.context(() => {
+      callback(element)
+    }, element)
+
     return () => ctx.revert()
-  }, [stableCallback])
+  }, [callback])
 
   return ref
 }

@@ -33,59 +33,49 @@ const socialLinks = [
 
 export function Contact() {
   return (
-    <section id="contato" className="py-24 md:py-32 lg:py-40 px-6 md:px-12 lg:px-[8%] flex flex-col items-center">
-      <Reveal className="w-full flex flex-col items-center gap-6">
-
-        {/* Card */}
+    <section id="contato" className="px-5 py-20 sm:px-6 sm:py-24 md:px-8 md:py-28 lg:px-[8%] 2xl:py-40">
+      <Reveal className="mx-auto flex w-full max-w-[1600px] flex-col items-center gap-6">
         <a
           href="https://wa.me/5519997026999?text=Ol%C3%A1%20Rafael%2C%20vim%20pelo%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto."
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative w-full max-w-6xl overflow-hidden rounded-[2rem] border border-border"
+          className="group relative w-full overflow-hidden rounded-[2rem] border border-border sm:rounded-[2.25rem]"
           data-cursor="expand"
           aria-label="Entrar em contato pelo WhatsApp"
         >
-          {/* Default background image — fades out on hover to reveal section background */}
           <div
-            className="absolute inset-0 opacity-100 group-hover:opacity-0 transition-opacity duration-500 pointer-events-none"
-            style={{ backgroundImage: "url('fundocta.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}
+            className="pointer-events-none absolute inset-0 opacity-100 transition-opacity duration-500 group-hover:opacity-0"
+            style={{ backgroundImage: "url('/fundocta.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}
           />
-          <div className="relative flex flex-col items-center justify-between min-h-[500px] md:min-h-[600px] py-12 px-8">
-            {/* Top: icon + label + whatsapp button */}
-            <div className="flex flex-col items-center gap-5">
-              <img
-                src="/tucano.png"
-                alt=""
-                aria-hidden="true"
-                className="h-10 w-10 object-contain"
-              />
-              <p className="text-xs tracking-[0.25em] uppercase text-text-tertiary group-hover:text-text-secondary transition-colors duration-500">
+
+          <div className="relative flex min-h-[420px] flex-col items-center justify-between px-6 py-10 sm:min-h-[500px] sm:px-8 sm:py-12 md:min-h-[560px]">
+            <div className="flex flex-col items-center gap-5 text-center">
+              <img src="/tucano.png" alt="" aria-hidden="true" className="h-10 w-10 object-contain" />
+              <p className="px-4 text-center text-[0.7rem] uppercase tracking-[0.25em] text-text-tertiary transition-colors duration-500 group-hover:text-text-secondary sm:text-xs">
                 ORÇAMENTO SEM COMPROMISSO · RESPOSTA RÁPIDA
               </p>
-              <div className="flex items-center gap-2 h-10 px-5 rounded-full border border-text-secondary/20 bg-transparent text-text-secondary text-xs tracking-[0.15em] uppercase pointer-events-none">
+              <div className="flex h-auto flex-wrap items-center justify-center gap-2 rounded-full border border-text-secondary/20 bg-transparent px-5 py-3 text-center text-[0.7rem] uppercase tracking-[0.15em] text-text-secondary sm:h-10 sm:py-0 sm:text-xs">
                 <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-current">
-                  <path d="M20.52 3.48A11.86 11.86 0 0 0 12.04 0C5.5 0 .2 5.3.2 11.84c0 2.09.55 4.13 1.6 5.93L0 24l6.38-1.67a11.82 11.82 0 0 0 5.66 1.44h.01c6.54 0 11.84-5.3 11.84-11.84 0-3.16-1.23-6.13-3.37-8.45zM12.05 21.3h-.01a9.46 9.46 0 0 1-4.82-1.32l-.35-.21-3.78.99 1.01-3.69-.23-.38a9.44 9.44 0 0 1-1.45-5.05c0-5.22 4.25-9.47 9.47-9.47 2.53 0 4.9.99 6.69 2.78a9.4 9.4 0 0 1 2.77 6.69c0 5.22-4.25 9.46-9.3 9.66zm5.2-7.1c-.29-.14-1.69-.83-1.95-.93-.26-.1-.45-.14-.64.14-.19.29-.73.93-.9 1.12-.17.19-.33.22-.62.07-.29-.14-1.21-.45-2.3-1.42-.85-.76-1.42-1.69-1.59-1.98-.17-.29-.02-.45.13-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.55-.47-.48-.64-.49l-.55-.01c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.39 0 1.41 1.03 2.78 1.17 2.97.14.19 2.03 3.1 4.92 4.35.69.3 1.22.48 1.64.61.69.22 1.32.19 1.81.12.55-.08 1.69-.69 1.93-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.33z"/>
+                  <path d="M20.52 3.48A11.86 11.86 0 0 0 12.04 0C5.5 0 .2 5.3.2 11.84c0 2.09.55 4.13 1.6 5.93L0 24l6.38-1.67a11.82 11.82 0 0 0 5.66 1.44h.01c6.54 0 11.84-5.3 11.84-11.84 0-3.16-1.23-6.13-3.37-8.45zM12.05 21.3h-.01a9.46 9.46 0 0 1-4.82-1.32l-.35-.21-3.78.99 1.01-3.69-.23-.38a9.44 9.44 0 0 1-1.45-5.05c0-5.22 4.25-9.47 9.47-9.47 2.53 0 4.9.99 6.69 2.78a9.4 9.4 0 0 1 2.77 6.69c0 5.22-4.25 9.46-9.3 9.66zm5.2-7.1c-.29-.14-1.69-.83-1.95-.93-.26-.1-.45-.14-.64.14-.19.29-.73.93-.9 1.12-.17.19-.33.22-.62.07-.29-.14-1.21-.45-2.3-1.42-.85-.76-1.42-1.69-1.59-1.98-.17-.29-.02-.45.13-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.55-.47-.48-.64-.49l-.55-.01c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.39 0 1.41 1.03 2.78 1.17 2.97.14.19 2.03 3.1 4.92 4.35.69.3 1.22.48 1.64.61.69.22 1.32.19 1.81.12.55-.08 1.69-.69 1.93-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.33z" />
                 </svg>
                 WhatsApp
               </div>
             </div>
 
-            {/* Bottom: big CTA text */}
-            <h2 className="text-[clamp(2.8rem,9vw,6rem)] font-extralight tracking-tight leading-none text-text-primary text-center">
+            <h2 className="text-center text-[clamp(2.5rem,12vw,6rem)] leading-[0.9] font-extralight tracking-tight text-text-primary">
               VAMOS CONSTRUIR ALGO JUNTOS?
             </h2>
           </div>
         </a>
 
-        {/* Pill links below card */}
-        <div className="flex flex-wrap justify-center gap-2 mt-2">
+        <div className="mt-2 flex w-full flex-wrap justify-center gap-2">
           {socialLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 h-10 px-5 rounded-full border border-text-secondary/20 text-text-secondary text-xs tracking-[0.15em] uppercase transition-all duration-300 hover:border-transparent hover:bg-white hover:text-text-secondary"
+              className="flex h-10 w-full items-center justify-center gap-2 rounded-full border border-text-secondary/20 px-5 text-xs uppercase tracking-[0.15em] text-text-secondary transition-all duration-300 hover:border-transparent hover:bg-white hover:text-text-secondary sm:w-auto"
               data-cursor="expand"
             >
               {link.icon}
@@ -93,7 +83,6 @@ export function Contact() {
             </a>
           ))}
         </div>
-
       </Reveal>
     </section>
   )

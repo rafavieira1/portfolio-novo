@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Reveal } from './ui/Reveal'
@@ -9,91 +9,94 @@ export function About() {
   const imgRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (!imgRef.current) return
+    const element = imgRef.current
+    if (!element) return
+
+    if (
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+      window.matchMedia('(max-width: 1023px)').matches
+    ) {
+      return
+    }
+
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        imgRef.current!,
+        element,
         { y: 40 },
         {
           y: -40,
           ease: 'none',
           scrollTrigger: {
-            trigger: imgRef.current!,
+            trigger: element,
             start: 'top bottom',
             end: 'bottom top',
             scrub: true,
           },
         }
       )
-    })
+    }, element)
+
     return () => ctx.revert()
   }, [])
 
   return (
-    <section id="sobre" className="py-24 md:py-32 lg:py-40">
-      <div className="grid grid-cols-1 lg:grid-cols-[50%_1fr] items-stretch gap-x-4 md:gap-x-8 lg:gap-x-12">
-
-        {/* Left — full-bleed image */}
-        <Reveal direction="left">
-          <div
-            ref={imgRef}
-            className="overflow-hidden bg-[#0e0e0e] rounded-3xl ml-4 md:ml-8 lg:ml-12 max-h-[700px]"
-          >
+    <section id="sobre" className="px-5 py-20 sm:px-6 sm:py-24 md:px-8 md:py-28 lg:px-12 lg:py-32 xl:px-[6%] 2xl:py-40">
+      <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1fr)] lg:items-stretch lg:gap-10 2xl:grid-cols-[50%_1fr] 2xl:gap-12">
+        <Reveal direction="left" className="lg:self-start">
+          <div ref={imgRef} className="max-h-[720px] overflow-hidden rounded-[2rem] bg-[#0e0e0e]">
             <img
               src="/4por3.png"
               alt="Retrato de Rafael Vieira"
-              className="block w-full h-full object-cover object-center"
+              className="block h-full w-full object-cover object-center"
               loading="lazy"
               decoding="async"
             />
           </div>
         </Reveal>
 
-        {/* Right — title + two-column text */}
-        <div className="flex flex-col justify-start pr-6 md:pr-12 lg:pr-16 pt-0 pb-16 lg:pb-0">
+        <div className="flex flex-col justify-start lg:pt-4">
           <Reveal>
-            <div className="flex items-baseline gap-4 mb-16 md:mb-20 lg:mb-24">
-              <span className="text-xs tracking-[0.3em] uppercase text-text-tertiary select-none">02</span>
-              <div className="h-px flex-1 max-w-[3rem] bg-border" />
+            <div className="mb-12 flex items-baseline gap-4 sm:mb-14 md:mb-16 lg:mb-20 2xl:mb-24">
+              <span className="select-none text-xs uppercase tracking-[0.3em] text-text-tertiary">02</span>
+              <div className="h-px max-w-[3rem] flex-1 bg-border" />
               <h2 className="text-[clamp(2.2rem,5.2vw,4.8rem)] font-light tracking-tight text-text-primary">
                 Sobre Mim
               </h2>
             </div>
           </Reveal>
 
-          <div className="flex flex-col gap-5">
+          <div className="flex max-w-[52rem] flex-col gap-5">
             <Reveal delay={0.1}>
-              <p className="text-text-secondary text-base md:text-lg leading-relaxed">
+              <p className="text-base leading-relaxed text-text-secondary sm:text-[1.05rem] md:text-lg">
                 Sou Rafael Vieira, desenvolvedor web full-stack.
               </p>
             </Reveal>
 
             <Reveal delay={0.15}>
-              <p className="text-text-secondary text-base md:text-lg leading-relaxed">
+              <p className="text-base leading-relaxed text-text-secondary sm:text-[1.05rem] md:text-lg">
                 Há cerca de 4 anos me apaixonei pela ideia de criar soluções digitais que resolvem problemas reais, e há 2 anos venho desenvolvendo sites e sistemas para clientes.
               </p>
             </Reveal>
 
             <Reveal delay={0.2}>
-              <p className="text-text-secondary text-base md:text-lg leading-relaxed">
+              <p className="text-base leading-relaxed text-text-secondary sm:text-[1.05rem] md:text-lg">
                 Atualmente curso os últimos períodos de Ciência da Computação. Fora do trabalho, gosto de esportes, música, jogos e tudo que envolve tecnologia.
               </p>
             </Reveal>
 
             <Reveal delay={0.25}>
-              <p className="text-text-secondary text-base md:text-lg leading-relaxed">
+              <p className="text-base leading-relaxed text-text-secondary sm:text-[1.05rem] md:text-lg">
                 O que me move é facilitar processos e gerar resultado para meus clientes, seja aumentando a conversão com um site bem feito ou simplificando a gestão do negócio com um sistema sob medida.
               </p>
             </Reveal>
 
             <Reveal delay={0.3}>
-              <p className="text-text-secondary text-base md:text-lg leading-relaxed">
+              <p className="text-base leading-relaxed text-text-secondary sm:text-[1.05rem] md:text-lg">
                 Atendo presencialmente em Medianeira e região, e remotamente em qualquer lugar do Brasil e do mundo.
               </p>
             </Reveal>
           </div>
         </div>
-
       </div>
     </section>
   )
