@@ -48,7 +48,7 @@ export function Contact() {
             style={{ backgroundImage: "url('/fundocta.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}
           />
 
-          <div className="relative flex min-h-[420px] flex-col items-center justify-between px-6 py-10 sm:min-h-[500px] sm:px-8 sm:py-12 md:min-h-[560px]">
+          <div className="relative flex flex-col items-center justify-center gap-10 px-6 py-10 sm:px-8 sm:py-12 lg:min-h-[560px] lg:justify-between">
             <div className="flex flex-col items-center gap-5 text-center">
               <img src="/tucano.png" alt="" aria-hidden="true" className="h-10 w-10 object-contain" />
               <p className="px-4 text-center text-[0.7rem] uppercase tracking-[0.25em] text-text-tertiary transition-colors duration-500 group-hover:text-text-secondary sm:text-xs">
@@ -62,7 +62,7 @@ export function Contact() {
               </div>
             </div>
 
-            <h2 className="text-center text-[clamp(2.5rem,12vw,6rem)] leading-[0.9] font-extralight tracking-tight text-text-primary">
+            <h2 className="text-center text-[clamp(1.8rem,7vw,4.5rem)] leading-[0.95] font-extralight tracking-tight text-text-primary lg:text-[clamp(2.5rem,12vw,6rem)] lg:leading-[0.9]">
               VAMOS CONSTRUIR ALGO JUNTOS?
             </h2>
           </div>

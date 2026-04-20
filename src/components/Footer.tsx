@@ -131,7 +131,7 @@ export function Footer() {
         <p>© {new Date().getFullYear()} Rafael Vieira</p>
       </div>
 
-      <div aria-hidden="true" className="pointer-events-none mt-6 flex justify-center overflow-hidden">
+      <div aria-hidden="true" className="pointer-events-none mt-6 flex justify-center">
         <span className="font-hero-display select-none whitespace-nowrap text-[clamp(5rem,28vw,22rem)] lowercase leading-[0.85] tracking-tight text-text-secondary/[0.09] -mb-[0.25em]">
           rafael
         </span>
