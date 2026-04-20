@@ -104,4 +104,23 @@ export const projects: Project[] = [
     context:
       'A marca queria um canal próprio de captação que não dependesse de redes sociais e fortalecesse o reconhecimento local como referência no segmento.',
   },
+  {
+    id: 'advfracaro',
+    name: 'Advocacia Fracaro',
+    category: { business: 'Advocacia', solution: 'Site institucional' },
+    tags: ['ADVOCACIA · SITE INSTITUCIONAL'],
+    images: [
+      '/images/projects/advfra (1).png',
+      '/images/projects/advfra (2).png',
+      '/images/projects/advfra (3).png',
+      '/images/projects/advfra (4).png',
+      '/images/projects/advfra (5).png',
+      '/images/projects/advfra (6).png',
+    ],
+    link: 'https://advocaciafracaro.com.br',
+    deliverable:
+      'Site institucional com apresentação do escritório, áreas de atuação, perfil dos advogados e formulário de contato para captação de novos clientes.',
+    context:
+      'O escritório precisava de uma presença digital profissional que transmitisse credibilidade e facilitasse o primeiro contato de potenciais clientes.',
+  },
 ]
