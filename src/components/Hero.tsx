@@ -106,27 +106,6 @@ export function Hero() {
             </h1>
           </header>
 
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 flex items-end justify-center">
-            {!imageFailed ? (
-              <img
-                src={personPng}
-                alt="Retrato de Rafael Vieira"
-                className="h-[74vh] max-h-[420px] w-auto max-w-[135%] object-contain object-bottom drop-shadow-[0_30px_45px_rgba(27,58,122,0.18)] sm:max-h-[480px] md:max-h-[470px] lg:max-h-[440px]"
-                loading="eager"
-                decoding="async"
-                onError={() => setImageFailed(true)}
-              />
-            ) : (
-              <img
-                src={localFallbackPerson}
-                alt="Retrato de pessoa"
-                className="h-[80vh] w-auto max-w-[80%] object-contain object-bottom drop-shadow-[0_30px_45px_rgba(27,58,122,0.18)] sm:h-[82vh]"
-                loading="eager"
-                decoding="async"
-              />
-            )}
-          </div>
-
           <div className="relative z-30 mt-5 px-1 md:mt-10 lg:mt-14 xl:mt-16">
             <h2 className="font-sans text-[0.82rem] font-light leading-[1.1] text-text-primary text-center sm:text-[0.9rem]">
               Sites e sistemas que transformam negócios locais em marcas digitais.
@@ -161,6 +140,27 @@ export function Hero() {
                 </a>
               ))}
             </div>
+          </div>
+
+          <div className="pointer-events-none relative z-20 mt-4 flex min-h-0 flex-1 items-end justify-center">
+            {!imageFailed ? (
+              <img
+                src={personPng}
+                alt="Retrato de Rafael Vieira"
+                className="h-full max-h-[70vh] w-auto max-w-[135%] object-contain object-bottom drop-shadow-[0_30px_45px_rgba(27,58,122,0.18)]"
+                loading="eager"
+                decoding="async"
+                onError={() => setImageFailed(true)}
+              />
+            ) : (
+              <img
+                src={localFallbackPerson}
+                alt="Retrato de pessoa"
+                className="h-full max-h-[70vh] w-auto max-w-[80%] object-contain object-bottom drop-shadow-[0_30px_45px_rgba(27,58,122,0.18)]"
+                loading="eager"
+                decoding="async"
+              />
+            )}
           </div>
         </div>
 
