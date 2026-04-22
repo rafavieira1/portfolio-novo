@@ -1,5 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Marquee } from './ui/marquee'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const personPng = '/eu.png'
 
@@ -48,12 +52,44 @@ const socialLinks = [
 
 export function Hero() {
   const [imageFailed, setImageFailed] = useState(false)
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const scope = sectionRef.current
+    if (!scope) return
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return
+    }
+
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: scope,
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 1,
+        },
+      })
+
+      tl.to(
+        '[data-hero-card]',
+        { scale: 0.92, yPercent: -6, filter: 'blur(6px)', opacity: 0.35, ease: 'none' },
+        0,
+      )
+        .to('[data-hero-h1]', { yPercent: -45, ease: 'none' }, 0)
+        .to('[data-hero-person]', { yPercent: 18, ease: 'none' }, 0)
+    }, scope)
+
+    return () => ctx.revert()
+  }, [])
 
   return (
-    <section className="px-2 pb-16 pt-16 sm:px-3 sm:pb-20 md:pt-20 lg:px-4 lg:pb-28 2xl:pb-40">
+    <section ref={sectionRef} className="px-2 pb-16 pt-16 sm:px-3 sm:pb-20 md:pt-20 lg:px-4 lg:pb-28 2xl:pb-40">
       <div
-        className="relative mx-auto max-w-[1800px] overflow-hidden rounded-[2.25rem] border border-border text-text-primary shadow-[0_30px_120px_rgba(27,58,122,0.12)] sm:rounded-[2.75rem] 2xl:min-h-[92vh] 2xl:rounded-[3rem]"
-        style={{ backgroundImage: "url('/gra.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}
+        data-hero-card
+        className="relative mx-auto max-w-[1800px] overflow-hidden rounded-[2.25rem] border border-border text-text-primary shadow-[0_30px_120px_rgba(27,58,122,0.12)] will-change-transform sm:rounded-[2.75rem] 2xl:min-h-[92vh] 2xl:rounded-[3rem]"
+        style={{ backgroundImage: "url('/gra.png')", backgroundSize: 'cover', backgroundPosition: 'center', transformOrigin: 'center top' }}
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_12%,rgba(27,58,122,0.07),transparent_28%),radial-gradient(circle_at_78%_20%,rgba(41,82,163,0.05),transparent_30%)]" />
         <div className="absolute inset-0 bg-[repeating-linear-gradient(122deg,rgba(27,58,122,0.018)_0px,rgba(27,58,122,0.018)_1px,transparent_1px,transparent_95px)] opacity-60" />
@@ -71,7 +107,7 @@ export function Hero() {
           </Marquee>
         </div>
 
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 hidden 2xl:flex justify-center">
+        <div data-hero-person className="pointer-events-none absolute inset-x-0 bottom-0 z-20 hidden 2xl:flex justify-center will-change-transform">
           {!imageFailed ? (
             <img
               src={personPng}
@@ -93,7 +129,7 @@ export function Hero() {
         </div>
 
         <div className="relative z-10 flex min-h-[72vh] flex-col px-5 pt-6 sm:min-h-[92vh] sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:hidden">
-          <header className="relative z-10">
+          <header data-hero-h1 className="relative z-10 will-change-transform">
             <h1
               className="font-hero-display mx-auto max-w-[9ch] text-center text-[clamp(3.25rem,18vw,8rem)] leading-[0.82] uppercase tracking-[0.02em] text-neutral-900 sm:max-w-[10ch] sm:text-[clamp(4rem,15vw,8.75rem)] lg:max-w-[12ch] xl:text-[clamp(5.5rem,12vw,9.5rem)] [transform:scaleY(1.16)] sm:[transform:scaleY(1.2)]"
               style={{
@@ -142,7 +178,7 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="pointer-events-none relative z-20 mt-4 flex min-h-0 flex-1 items-end justify-center">
+          <div data-hero-person className="pointer-events-none relative z-20 mt-4 flex min-h-0 flex-1 items-end justify-center will-change-transform">
             {!imageFailed ? (
               <img
                 src={personPng}
@@ -165,7 +201,7 @@ export function Hero() {
         </div>
 
         <div className="relative z-10 hidden min-h-[92vh] flex-col px-5 pt-0 pb-20 md:px-8 md:pb-24 lg:px-12 lg:pb-28 2xl:flex">
-          <header className="relative z-10 pt-0">
+          <header data-hero-h1 className="relative z-10 pt-0 will-change-transform">
             <h1
               className="font-hero-display whitespace-nowrap text-center text-[clamp(2.8rem,13vw,11rem)] uppercase tracking-[0.02em] text-neutral-900"
               style={{
