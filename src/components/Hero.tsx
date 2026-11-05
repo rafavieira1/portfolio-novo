@@ -8,21 +8,21 @@ gsap.registerPlugin(ScrollTrigger)
 const personPng = '/eu.png'
 
 const marqueeItems = [
+  'Agentes de IA',
+  'Automações',
+  'MCP',
+  'Integrações',
+  'Sistemas',
   'Sites',
   'Landing Pages',
-  'Sistemas',
-  'Design',
-  'Página de Links',
-  'Automações',
   'Performance',
-  'SEO',
 ]
 const localFallbackPerson = '/images/hero-person.svg'
 
 const socialLinks = [
   {
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/rafael-silva-vieira/',
+    href: 'https://www.linkedin.com/in/rafasvieira/',
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-current">
         <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7 0h3.83v2.05h.05C11.9 8.9 13.48 7.5 16 7.5c5.2 0 6 3.2 6 7.35V23h-4v-7.2c0-1.72-.03-3.92-2.39-3.92-2.39 0-2.76 1.87-2.76 3.8V23h-4V8z" />
@@ -144,14 +144,14 @@ export function Hero() {
 
           <div className="relative z-30 mt-5 px-1 md:mt-10 lg:mt-14 xl:mt-16">
             <h2 className="font-sans text-[0.82rem] font-light leading-[1.1] text-text-primary text-center sm:text-[0.9rem]">
-              Sites e sistemas que transformam negócios locais em marcas digitais.
+              Sistemas com IA, automações e sites que já estão em uso.
             </h2>
             <p className="mt-1 text-[0.68rem] leading-relaxed text-text-secondary text-center sm:text-[0.72rem]">
-              Atuo do planejamento à entrega: estratégia, design, frontend e backend. Produtos rápidos, elegantes e prontos para converter.
+              Desenvolvedor de IA e automação. Construo agentes no WhatsApp, integrações e painéis que rodam todos os dias numa empresa de saúde e segurança do trabalho.
             </p>
             <div className="mt-2 flex flex-wrap items-center justify-center gap-2">
               <a
-                href="https://wa.me/5519997026999?text=Ol%C3%A1%20Rafael%2C%20vim%20pelo%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto."
+                href="https://wa.me/5519997026999?text=Ol%C3%A1%20Rafael%2C%20vim%20pelo%20seu%20portf%C3%B3lio."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 rounded-full bg-neutral-900 px-4 py-2 text-xs font-medium text-white shadow-[0_6px_20px_rgba(0,0,0,0.25)] transition-all hover:-translate-y-0.5 hover:bg-neutral-800"
@@ -218,15 +218,15 @@ export function Hero() {
           <div className="mt-0 flex flex-1 items-end pb-2">
             <div className="relative z-30 flex flex-col justify-center">
               <h2 className="font-sans max-w-[24ch] text-[clamp(1.8rem,2.8vw,2.7rem)] font-light leading-[1.06] text-text-primary">
-                Sites e sistemas que transformam negócios locais em marcas digitais.
+                Sistemas com IA, automações e sites que já estão em uso.
               </h2>
               <p className="mt-4 max-w-[44ch] text-base leading-relaxed text-text-secondary">
-                Atuo do planejamento à entrega: estratégia, design, frontend e backend. Produtos rápidos, elegantes e prontos para converter.
+                Desenvolvedor de IA e automação. Construo agentes no WhatsApp, integrações e painéis que rodam todos os dias numa empresa de saúde e segurança do trabalho.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <a
-                  href="https://wa.me/5519997026999?text=Ol%C3%A1%20Rafael%2C%20vim%20pelo%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto."
+                  href="https://wa.me/5519997026999?text=Ol%C3%A1%20Rafael%2C%20vim%20pelo%20seu%20portf%C3%B3lio."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2 rounded-full bg-neutral-900 px-6 py-3 text-sm font-medium text-white shadow-[0_10px_30px_rgba(0,0,0,0.25)] transition-all hover:-translate-y-0.5 hover:bg-neutral-800 hover:shadow-[0_16px_40px_rgba(0,0,0,0.35)]"

@@ -5,8 +5,14 @@ export interface Project {
   tags: string[]
   images: string[]
   link: string
+  /** Texto do botão do link. Padrão: "Ver projeto". */
+  linkLabel?: string
   deliverable: string
   context: string
+  /** Números de resultado exibidos em destaque no painel aberto. */
+  highlights?: { value: string; label: string }[]
+  /** Tecnologias usadas, exibidas como etiquetas. */
+  stack?: string[]
 }
 
 export const projects: Project[] = [
@@ -122,5 +128,24 @@ export const projects: Project[] = [
       'Site institucional com apresentação do escritório, áreas de atuação, perfil dos advogados e formulário de contato para captação de novos clientes.',
     context:
       'O escritório precisava de uma presença digital profissional que transmitisse credibilidade e facilitasse o primeiro contato de potenciais clientes.',
+  },
+  {
+    id: 'veritaessere',
+    name: 'Verità Essere',
+    category: { business: 'Psicologia', solution: 'Site institucional' },
+    tags: ['PSICOLOGIA · SITE INSTITUCIONAL'],
+    images: [
+      '/images/projects/veritaessere-1.webp',
+      '/images/projects/veritaessere-2.webp',
+      '/images/projects/veritaessere-3.webp',
+      '/images/projects/veritaessere-4.webp',
+      '/images/projects/veritaessere-5.webp',
+      '/images/projects/veritaessere-6.webp',
+    ],
+    link: 'https://clinicaveritaessere.com',
+    deliverable:
+      'Site institucional para psicólogo, com apresentação do profissional, áreas de atuação, explicação de como funciona a psicoterapia, perguntas frequentes e agendamento pelo WhatsApp.',
+    context:
+      'O psicólogo atende em Medianeira e online e precisava de um canal próprio que transmitisse acolhimento e credibilidade e levasse o paciente direto ao agendamento.',
   },
 ]

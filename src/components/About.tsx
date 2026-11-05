@@ -80,31 +80,31 @@ export function About() {
           <div className="flex max-w-[52rem] flex-col gap-5">
             <Reveal delay={0.1}>
               <p className="text-base leading-relaxed text-text-secondary sm:text-[1.05rem] md:text-lg">
-                Sou Rafael Vieira, desenvolvedor web full-stack.
+                Sou Rafael Vieira, desenvolvedor de IA e automação.
               </p>
             </Reveal>
 
             <Reveal delay={0.15}>
               <p className="text-base leading-relaxed text-text-secondary sm:text-[1.05rem] md:text-lg">
-                Há cerca de 4 anos me apaixonei pela ideia de criar soluções digitais que resolvem problemas reais, e há 2 anos venho desenvolvendo sites e sistemas para clientes.
+                Desde janeiro de 2026 estou na SafeWork, empresa de saúde e segurança do trabalho, onde desenvolvi do zero a plataforma de automações: agentes de IA no WhatsApp, um sistema de agendamento de exames e robôs que operam o ERP do setor.
               </p>
             </Reveal>
 
             <Reveal delay={0.2}>
               <p className="text-base leading-relaxed text-text-secondary sm:text-[1.05rem] md:text-lg">
-                Atualmente curso os últimos períodos de Ciência da Computação. Fora do trabalho, gosto de esportes, música, jogos e tudo que envolve tecnologia.
+                Antes disso, trabalhei com suporte e desenvolvimento em ERPs, o que me ensinou a entender o processo antes de automatizar. Também desenvolvo sites e sistemas para clientes desde 2025.
               </p>
             </Reveal>
 
             <Reveal delay={0.25}>
               <p className="text-base leading-relaxed text-text-secondary sm:text-[1.05rem] md:text-lg">
-                O que me move é facilitar processos e gerar resultado para meus clientes, seja aumentando a conversão com um site bem feito ou simplificando a gestão do negócio com um sistema sob medida.
+                No dia a dia, uso o Claude Code e o Codex, sempre com especificação, plano e testes antes do código. Também criei um servidor MCP que conecta o Claude aos dados de campanhas do Meta Ads.
               </p>
             </Reveal>
 
             <Reveal delay={0.3}>
               <p className="text-base leading-relaxed text-text-secondary sm:text-[1.05rem] md:text-lg">
-                Atendo presencialmente em Medianeira e região, e remotamente em qualquer lugar do Brasil e do mundo.
+                Estou no último semestre de Ciência da Computação na UTFPR. Fora do trabalho, gosto de esportes, música e jogos.
               </p>
             </Reveal>
           </div>

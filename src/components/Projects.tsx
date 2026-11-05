@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
-import { projects } from '../data/projects'
+import { projects, type Project } from '../data/projects'
+import { automacoes, projetosProprios } from '../data/automacoes'
 import { ProjectImage } from './ui/ProjectImage'
 import { Reveal } from './ui/Reveal'
 
@@ -134,7 +135,7 @@ function ProjectRow({
   onMouseEnter,
   onMouseLeave,
 }: {
-  project: typeof projects[0]
+  project: Project
   index: number
   onMouseEnter: () => void
   onMouseLeave: () => void
@@ -207,11 +208,6 @@ function ProjectRow({
           </div>
 
           <div className="ml-0 flex shrink-0 items-center gap-4 self-start lg:ml-4 lg:self-center">
-            {project.link === '#' && (
-              <span className="hidden text-xs uppercase tracking-[0.18em] text-neutral-900 lg:block">
-                VER PROJETO
-              </span>
-            )}
             <span
               className="inline-block text-lg text-neutral-900 transition-all duration-300"
               style={{ transform: open ? 'rotate(45deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease' }}
@@ -244,8 +240,34 @@ function ProjectRow({
                 </p>
               </div>
 
-              <div className="mt-2 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-                {project.link !== '#' && (
+              {project.highlights && project.highlights.length > 0 && (
+                <div className="flex flex-wrap gap-x-10 gap-y-4">
+                  {project.highlights.map((h) => (
+                    <div key={h.label} className="flex flex-col">
+                      <span className="text-3xl font-extralight tracking-tight text-neutral-900 md:text-4xl">
+                        {h.value}
+                      </span>
+                      <span className="text-xs text-text-secondary md:text-sm">{h.label}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {project.stack && project.stack.length > 0 && (
+                <div className="flex flex-wrap gap-2">
+                  {project.stack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="rounded-full border border-text-secondary/25 px-3 py-1 text-[0.68rem] uppercase tracking-[0.14em] text-neutral-900"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              )}
+
+              {project.link !== '#' && (
+                <div className="mt-2 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
                   <a
                     href={project.link}
                     target="_blank"
@@ -253,24 +275,10 @@ function ProjectRow({
                     data-cursor="expand"
                     className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-neutral-900 px-6 py-3 text-sm font-medium text-white shadow-[0_10px_30px_rgba(0,0,0,0.25)] transition-all hover:-translate-y-0.5 hover:bg-neutral-800 hover:shadow-[0_16px_40px_rgba(0,0,0,0.35)] sm:w-auto"
                   >
-                    Ver projeto
+                    {project.linkLabel ?? 'Ver projeto'}
                   </a>
-                )}
-                <a
-                  href={`https://wa.me/5519997026999?text=${encodeURIComponent(
-                    `Olá Rafael, vi o projeto ${project.name} no seu portfólio e quero algo parecido.`
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-cursor="expand"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-neutral-900 px-6 py-3 text-sm font-medium text-white shadow-[0_10px_30px_rgba(0,0,0,0.25)] transition-all hover:-translate-y-0.5 hover:bg-neutral-800 hover:shadow-[0_16px_40px_rgba(0,0,0,0.35)] sm:w-auto"
-                >
-                  <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-current">
-                    <path d="M20.52 3.48A11.86 11.86 0 0 0 12.04 0C5.5 0 .2 5.3.2 11.84c0 2.09.55 4.13 1.6 5.93L0 24l6.38-1.67a11.82 11.82 0 0 0 5.66 1.44h.01c6.54 0 11.84-5.3 11.84-11.84 0-3.16-1.23-6.13-3.37-8.45zM12.05 21.3h-.01a9.46 9.46 0 0 1-4.82-1.32l-.35-.21-3.78.99 1.01-3.69-.23-.38a9.44 9.44 0 0 1-1.45-5.05c0-5.22 4.25-9.47 9.47-9.47 2.53 0 4.9.99 6.69 2.78a9.4 9.4 0 0 1 2.77 6.69c0 5.22-4.25 9.46-9.3 9.66zm5.2-7.1c-.29-.14-1.69-.83-1.95-.93-.26-.1-.45-.14-.64.14-.19.29-.73.93-.9 1.12-.17.19-.33.22-.62.07-.29-.14-1.21-.45-2.3-1.42-.85-.76-1.42-1.69-1.59-1.98-.17-.29-.02-.45.13-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.55-.47-.48-.64-.49l-.55-.01c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.39 0 1.41 1.03 2.78 1.17 2.97.14.19 2.03 3.1 4.92 4.35.69.3 1.22.48 1.64.61.69.22 1.32.19 1.81.12.55-.08 1.69-.69 1.93-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.33z" />
-                  </svg>
-                  Quero algo parecido
-                </a>
-              </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -279,7 +287,19 @@ function ProjectRow({
   )
 }
 
-export function Projects() {
+function ProjectList({
+  id,
+  number,
+  title,
+  intro,
+  items,
+}: {
+  id: string
+  number: string
+  title: string
+  intro?: string
+  items: Project[]
+}) {
   const [activeId, setActiveId] = useState<string | null>(null)
   const [isCoarse, setIsCoarse] = useState(() =>
     typeof window !== 'undefined' ? window.matchMedia('(pointer: coarse)').matches : false
@@ -302,23 +322,33 @@ export function Projects() {
     return () => mediaQuery.removeListener(updatePointerMode)
   }, [])
 
-  const activeProject = projects.find((project) => project.id === activeId)
+  const visible = items.filter((item) => item.images.length > 0)
+  const activeProject = visible.find((project) => project.id === activeId)
+
+  if (visible.length === 0) return null
 
   return (
-    <section id="projetos" className="px-5 py-20 sm:px-6 sm:py-24 md:px-8 md:py-28 lg:px-[6%] xl:px-[8%] 2xl:py-40">
+    <section id={id} className="px-5 py-20 sm:px-6 sm:py-24 md:px-8 md:py-28 lg:px-[6%] xl:px-[8%] 2xl:py-40">
       <div className="mx-auto max-w-[1600px]">
         <Reveal>
-          <div className="mb-12 flex items-baseline gap-4 sm:mb-14 md:mb-16 lg:mb-20 2xl:mb-24">
-            <span className="select-none text-xs uppercase tracking-[0.3em] text-neutral-900">03</span>
-            <div className="h-px max-w-[3rem] flex-1 bg-border" />
-            <h2 className="text-[clamp(2.2rem,5.2vw,4.8rem)] font-light tracking-tight text-neutral-900">
-              Projetos
-            </h2>
+          <div className="mb-12 flex flex-col gap-6 sm:mb-14 md:mb-16 lg:mb-20 2xl:mb-24">
+            <div className="flex items-baseline gap-4">
+              <span className="select-none text-xs uppercase tracking-[0.3em] text-neutral-900">{number}</span>
+              <div className="h-px max-w-[3rem] flex-1 bg-border" />
+              <h2 className="text-[clamp(2.2rem,5.2vw,4.8rem)] font-light tracking-tight text-neutral-900">
+                {title}
+              </h2>
+            </div>
+            {intro && (
+              <p className="max-w-[52rem] text-base leading-relaxed text-text-secondary sm:text-[1.05rem] md:text-lg">
+                {intro}
+              </p>
+            )}
           </div>
         </Reveal>
 
         <div>
-          {projects.map((project, index) => (
+          {visible.map((project, index) => (
             <ProjectRow
               key={project.id}
               project={project}
@@ -339,5 +369,28 @@ export function Projects() {
         )}
       </div>
     </section>
+  )
+}
+
+export function Automations() {
+  return (
+    <ProjectList
+      id="automacoes"
+      number="03"
+      title="Automações e IA"
+      intro="Sistemas que desenvolvi na SafeWork, empresa de saúde e segurança do trabalho, e que estão em uso pela equipe e pelos clientes. Nas imagens, nomes e documentos aparecem desfocados ou com dados de teste."
+      items={automacoes}
+    />
+  )
+}
+
+export function OwnProjects() {
+  return <ProjectList id="projetos-proprios" number="04" title="Projetos próprios" items={projetosProprios} />
+}
+
+export function Projects() {
+  const temProprios = projetosProprios.some((p) => p.images.length > 0)
+  return (
+    <ProjectList id="projetos" number={temProprios ? '05' : '04'} title="Sites para clientes" items={projects} />
   )
 }

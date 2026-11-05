@@ -7,7 +7,7 @@ import { CustomCursor } from './components/CustomCursor'
 import { Navbar } from './components/Navbar'
 import { Hero } from './components/Hero'
 import { About } from './components/About'
-import { Projects } from './components/Projects'
+import { Automations, OwnProjects, Projects } from './components/Projects'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
 
@@ -43,6 +43,8 @@ function App() {
         <Hero />
                 <div style={{ backgroundImage: 'linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0.85) 6%, rgba(255,255,255,0.5) 14%, rgba(255,255,255,0.2) 22%, rgba(255,255,255,0) 32%), url(/nova.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
           <About />
+          <Automations />
+          <OwnProjects />
           <Projects />
           <Contact />
         </div>

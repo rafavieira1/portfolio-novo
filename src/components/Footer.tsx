@@ -4,7 +4,8 @@ import { MotionButton } from './ui/motion-button'
 
 const navLinks = [
   { label: 'Sobre', href: '#sobre' },
-  { label: 'Projetos', href: '#projetos' },
+  { label: 'Automações', href: '#automacoes' },
+  { label: 'Sites', href: '#projetos' },
   { label: 'Contato', href: '#contato' },
 ]
 
@@ -20,7 +21,7 @@ const socialLinks = [
   },
   {
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/rafael-silva-vieira/',
+    href: 'https://www.linkedin.com/in/rafasvieira/',
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5 fill-current">
         <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7 0h3.83v2.05h.05C11.9 8.9 13.48 7.5 16 7.5c5.2 0 6 3.2 6 7.35V23h-4v-7.2c0-1.72-.03-3.92-2.39-3.92-2.39 0-2.76 1.87-2.76 3.8V23h-4V8z" />
@@ -68,7 +69,7 @@ export function Footer() {
               </a>
             ))}
             <a
-              href="mailto:rafavieira372@gmail.com"
+              href="mailto:rafasvieira01@gmail.com"
               aria-label="Email"
               className="flex h-9 w-9 items-center justify-center rounded-full border border-text-secondary/30 text-text-secondary transition-colors hover:border-text-secondary hover:text-text-primary"
               data-cursor="expand"

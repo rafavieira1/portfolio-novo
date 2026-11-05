@@ -2,7 +2,8 @@
 
 @font-face {
   font-family: 'EpicPro';
-  src: url('/GC-EPICPRO-Demo-BF6891cc5419ab8.ttf') format('truetype');
+  /* Versão com À-Ý e à-ý montados a partir das letras da própria fonte (o demo original não tem acentos). */
+  src: url('/fonts/EpicPro-PT.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
@@ -72,11 +73,13 @@
 @layer components {
   .font-hero-display {
     font-family: 'EpicPro', 'Inter', sans-serif;
+    text-transform: uppercase;
     font-weight: 400;
   }
 
   h2, h4, h5, h6 {
     font-family: 'EpicPro', 'Inter', sans-serif;
+    text-transform: uppercase;
     color: #171717 !important;
     text-shadow:
       0 0 40px rgba(17, 17, 17, 0.12),
@@ -86,6 +89,7 @@
 
   h3 {
     font-family: 'EpicPro', 'Inter', sans-serif;
+    text-transform: uppercase;
   }
 
 }

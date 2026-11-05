@@ -12,7 +12,7 @@ const socialLinks = [
   },
   {
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/rafael-silva-vieira/',
+    href: 'https://www.linkedin.com/in/rafasvieira/',
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-current">
         <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7 0h3.83v2.05h.05C11.9 8.9 13.48 7.5 16 7.5c5.2 0 6 3.2 6 7.35V23h-4v-7.2c0-1.72-.03-3.92-2.39-3.92-2.39 0-2.76 1.87-2.76 3.8V23h-4V8z" />
@@ -36,7 +36,7 @@ export function Contact() {
     <section id="contato" className="px-5 py-20 sm:px-6 sm:py-24 md:px-8 md:py-28 lg:px-[8%] 2xl:py-40">
       <Reveal className="mx-auto flex w-full max-w-[1600px] flex-col items-center gap-6">
         <a
-          href="https://wa.me/5519997026999?text=Ol%C3%A1%20Rafael%2C%20vim%20pelo%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto."
+          href="https://wa.me/5519997026999?text=Ol%C3%A1%20Rafael%2C%20vim%20pelo%20seu%20portf%C3%B3lio."
           target="_blank"
           rel="noopener noreferrer"
           className="group relative w-full overflow-hidden rounded-[2rem] border border-border sm:rounded-[2.25rem]"
@@ -52,7 +52,7 @@ export function Contact() {
             <div className="flex flex-col items-center gap-5 text-center">
               <img src="/tucano.png" alt="" aria-hidden="true" className="h-10 w-10 object-contain" />
               <p className="px-4 text-center text-[0.7rem] uppercase tracking-[0.25em] text-text-tertiary transition-colors duration-500 group-hover:text-text-secondary sm:text-xs">
-                ORÇAMENTO SEM COMPROMISSO · RESPOSTA RÁPIDA
+                CONTATO DIRETO PELO WHATSAPP
               </p>
               <div className="flex h-auto flex-wrap items-center justify-center gap-2 rounded-full border border-text-secondary/20 bg-transparent px-5 py-3 text-center text-[0.7rem] uppercase tracking-[0.15em] text-text-secondary sm:h-10 sm:py-0 sm:text-xs">
                 <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 fill-current">
@@ -63,7 +63,7 @@ export function Contact() {
             </div>
 
             <h2 className="text-center text-[clamp(1.8rem,7vw,4.5rem)] leading-[0.95] font-extralight tracking-tight text-text-primary lg:text-[clamp(2.5rem,12vw,6rem)] lg:leading-[0.9]">
-              VAMOS CONSTRUIR ALGO JUNTOS?
+              VAMOS CONVERSAR?
             </h2>
           </div>
         </a>

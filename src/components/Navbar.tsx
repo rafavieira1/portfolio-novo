@@ -5,7 +5,8 @@ import { MagneticButton } from './ui/MagneticButton'
 
 const links = [
   { label: 'Sobre', href: '#sobre' },
-  { label: 'Projetos', href: '#projetos' },
+  { label: 'Automações', href: '#automacoes' },
+  { label: 'Sites', href: '#projetos' },
   { label: 'Contato', href: '#contato' },
 ]
 
